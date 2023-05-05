@@ -1,2 +1,18 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import { invalidate } from '$app/navigation';
+	import { page } from '$app/stores';
+
+	export let data;
+</script>
+
+<p>
+	{#await data.streamed.views}
+		Loading...
+	{:then views}
+		This page has been viewed {views} times.
+	{:catch error}
+		{error.message}
+	{/await}
+</p>
+
+<button on:click={() => invalidate($page.url)}>Refresh</button>
