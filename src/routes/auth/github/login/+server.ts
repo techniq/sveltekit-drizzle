@@ -1,4 +1,4 @@
-import { auth, githubAuth } from '$lib/auth/auth.server';
+import { githubAuth } from '$lib/server/auth';
 
 // https://lucia-auth.com/oauth/start-here/getting-started
 // https://lucia-auth.com/oauth/providers/github

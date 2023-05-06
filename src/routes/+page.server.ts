@@ -1,7 +1,7 @@
 import { eq } from 'drizzle-orm';
 
-import { conn } from '$lib/db/conn.server.js';
-import { PageInsights } from '$lib/db/schema.js';
+import { conn } from '$lib/server/db/conn';
+import { PageInsights } from '$lib/server/db/schema';
 
 export async function load({ locals }) {
 	const { user, session } = await locals.auth.validateUser();

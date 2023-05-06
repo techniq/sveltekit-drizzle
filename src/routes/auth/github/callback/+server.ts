@@ -1,4 +1,4 @@
-import { auth, githubAuth } from '$lib/auth/auth.server';
+import { auth, githubAuth } from '$lib/server/auth';
 import { redirect } from '@sveltejs/kit';
 
 export async function GET({ cookies, url, locals }) {

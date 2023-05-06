@@ -15,7 +15,7 @@ declare global {
 /// <reference types="lucia-auth" />
 declare global {
 	namespace Lucia {
-		type Auth = import('$lib/auth/auth.server').Auth;
+		type Auth = import('$lib/server/auth').Auth;
 		type UserAttributes = {
 			// see: `schema.ts` and lucia's `transformDatabaseUser()`
 			username: string;

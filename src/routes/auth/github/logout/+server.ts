@@ -1,4 +1,4 @@
-import { auth } from '$lib/auth/auth.server';
+import { auth } from '$lib/server/auth';
 import { redirect } from '@sveltejs/kit';
 
 // TODO: This should be a generic `/auth/logout/` instead of `/auth/github/logout`?
