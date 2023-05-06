@@ -1,7 +1,6 @@
 import lucia from 'lucia-auth';
 import { sveltekit } from 'lucia-auth/middleware';
 import { github } from '@lucia-auth/oauth/providers';
-// Use `pg` (node) until Vercel Postgres (based on https://github.com/neondatabase/serverless likely) adapter is available
 import { Pool } from '@neondatabase/serverless';
 import { pg } from '@lucia-auth/adapter-postgresql';
 
