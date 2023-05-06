@@ -12,7 +12,19 @@
 - Zod
 - Vercel Postgres (Neon)
 
+## Setup SvelteKit / Vercel
+
 - [Tutorial — SvelteKit and Drizzle-ORM](https://blog.robino.dev/posts/drizzle-svelte)
+- `vercel login`
+- `vercel link`
+- `verecel git connect`
+
+## Run server
+
+- `vercel env pull .env.development.local`
+  - Pull any changes added to vercel [environment variables](https://vercel.com/techniq/sveltekit-drizzle/settings/environment-variables)
+- `npm run dev:vercel`
+  - Use instead of `npm run dev` so environment variables are available
 
 ## [Drizzle](https://github.com/drizzle-team/drizzle-orm)
 
