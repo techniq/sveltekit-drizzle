@@ -2,13 +2,13 @@ import lucia from 'lucia-auth';
 import { sveltekit } from 'lucia-auth/middleware';
 import { github } from '@lucia-auth/oauth/providers';
 // Use `pg` (node) until Vercel Postgres (based on https://github.com/neondatabase/serverless likely) adapter is available
-import postgres from 'pg';
+import { Pool } from '@neondatabase/serverless';
 import { pg } from '@lucia-auth/adapter-postgresql';
 
 import { dev } from '$app/environment';
 
-const connectionPool = new postgres.Pool({
-	connectionString: process.env.POSTGRES_URL + '?sslmode=require'
+const connectionPool = new Pool({
+	connectionString: process.env.POSTGRES_URL
 });
 
 export const auth = lucia({
