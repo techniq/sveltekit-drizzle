@@ -1,0 +1,1 @@
+ALTER TABLE "auth_key" ALTER COLUMN "expires" DROP NOT NULL;

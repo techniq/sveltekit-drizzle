@@ -1,0 +1,1 @@
+ALTER TABLE "auth_key" ADD COLUMN "expires" bigint NOT NULL;

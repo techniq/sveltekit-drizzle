@@ -4,9 +4,24 @@ declare global {
 	namespace App {
 		// interface Error {}
 		// interface Locals {}
+		interface Locals {
+			auth: import('lucia-auth').AuthRequest;
+		}
 		// interface PageData {}
 		// interface Platform {}
 	}
 }
 
+/// <reference types="lucia-auth" />
+declare global {
+	namespace Lucia {
+		type Auth = import('$lib/auth/auth.server').Auth;
+		type UserAttributes = {
+			// see: `schema.ts` and lucia's `transformDatabaseUser()`
+			username: string;
+		};
+	}
+}
+
+// THIS IS IMPORTANT!!!
 export {};

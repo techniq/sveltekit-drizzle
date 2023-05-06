@@ -3,8 +3,9 @@ import { eq } from 'drizzle-orm';
 import { conn } from '$lib/db/conn.server.js';
 import { PageInsights } from '$lib/db/schema.js';
 
-export async function load() {
-	return { streamed: { views: fetchViews() } };
+export async function load({ locals }) {
+	const { user, session } = await locals.auth.validateUser();
+	return { user, session, streamed: { views: fetchViews() } };
 }
 
 const fetchViews = async () => {

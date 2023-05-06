@@ -8,6 +8,34 @@
       "when": 1683252465456,
       "tag": "0000_robust_mother_askani",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1683337151947,
+      "tag": "0001_greedy_vulcan",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1683337376962,
+      "tag": "0002_broad_frank_castle",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1683337775594,
+      "tag": "0003_kind_wilson_fisk",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1683338003728,
+      "tag": "0004_unique_dakota_north",
+      "breakpoints": true
     }
   ]
 }

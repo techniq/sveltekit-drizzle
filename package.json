@@ -30,8 +30,12 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@lucia-auth/adapter-postgresql": "^1.0.0",
+		"@lucia-auth/oauth": "^1.0.1",
 		"@vercel/postgres": "^0.1.3",
 		"drizzle-kit": "^0.17.6",
-		"drizzle-orm": "^0.25.4"
+		"drizzle-orm": "^0.25.4",
+		"lucia-auth": "^1.5.0",
+		"pg": "^8.10.0"
 	}
 }
