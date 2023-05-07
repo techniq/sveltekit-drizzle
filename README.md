@@ -46,3 +46,25 @@
 - [OAuth](https://lucia-auth.com/oauth/start-here/getting-started) / [Github](https://lucia-auth.com/oauth/providers/github)
 
 ## [Superforms](https://superforms.vercel.app/)
+
+## Environment Variables
+
+Current variables defined using Vercel dashboard (setting up Vercel Postgres or Vercel Neon integration)
+
+```js
+console.log({
+	// Vercel
+	POSTGRES_URL: env.POSTGRES_URL,
+	POSTGRES_HOST: env.POSTGRES_HOST,
+	POSTGRES_USER: env.POSTGRES_USER,
+	POSTGRES_PASSWORD: env.POSTGRES_PASSWORD,
+	POSTGRES_DATABASE: env.POSTGRES_DATABASE,
+
+	// Neon
+	DATABASE_URL: env.DATABASE_URL,
+	PGHOST: env.PGHOST,
+	PGUSER: env.PGUSER,
+	PGPASSWORD: env.PGPASSWORD,
+	PGDATABASE: env.PGDATABASE
+});
+```
