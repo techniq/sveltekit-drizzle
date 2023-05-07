@@ -17,7 +17,6 @@ export async function GET({ cookies, url, locals }) {
 
 		const getUser = async () => {
 			if (existingUser) {
-				console.log('existing user', existingUser);
 				return existingUser;
 			}
 			// create a new user if the user does not exist
@@ -27,7 +26,6 @@ export async function GET({ cookies, url, locals }) {
 			});
 		};
 		const user = await getUser();
-		console.log({ user });
 		const session = await auth.createSession(user.id);
 		locals.auth.setSession(session);
 	} catch (e) {
