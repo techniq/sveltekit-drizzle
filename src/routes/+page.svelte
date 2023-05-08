@@ -20,7 +20,9 @@
 
 {#if data.user}
 	Signed in as: {data.user?.username}
-	<a href="/auth/github/logout">Sign out</a>
+	<a href="/auth/logout">Sign out</a>
 {:else}
+	<a href="/auth/register">Register</a>
+	<a href="/auth/login">Login</a>
 	<a href="/auth/github/login">Login to Github</a>
 {/if}
