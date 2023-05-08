@@ -1,7 +1,7 @@
 import lucia from 'lucia-auth';
+import { pg } from '@lucia-auth/adapter-postgresql';
 import { sveltekit } from 'lucia-auth/middleware';
 import { github } from '@lucia-auth/oauth/providers';
-import { pg } from '@lucia-auth/adapter-postgresql';
 
 import { dev } from '$app/environment';
 import { env } from '$env/dynamic/private';
@@ -17,8 +17,8 @@ export const auth = lucia({
 });
 
 export const githubAuth = github(auth, {
-	clientId: env.GITHUB_CLIENT_ID ?? 'MISSING',
-	clientSecret: env.GITHUB_CLIENT_SECRET ?? 'MISSING'
+	clientId: env.GITHUB_CLIENT_ID,
+	clientSecret: env.GITHUB_CLIENT_SECRET
 });
 
 export type Auth = typeof auth;

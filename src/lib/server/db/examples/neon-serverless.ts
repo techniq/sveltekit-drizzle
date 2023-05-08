@@ -4,7 +4,7 @@ import ws from 'ws';
 
 import { env } from '$env/dynamic/private';
 
-// TODO: Do not set when van on edge
+// TODO: Do not set when running on Edge
 // https://github.com/neondatabase/serverless#run-on-node
 neonConfig.webSocketConstructor = ws;
 
