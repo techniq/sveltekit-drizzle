@@ -1,6 +1,6 @@
 import { eq } from 'drizzle-orm';
 
-import { conn } from '$lib/server/db/conn';
+import { db } from '$lib/server/db';
 import { PageInsights } from '$lib/server/db/schema';
 
 export async function load({ locals }) {
@@ -10,7 +10,7 @@ export async function load({ locals }) {
 
 const fetchViews = async () => {
 	// prettier-ignore
-	const insights = await conn
+	const insights = await db
 		.select()
 		.from(PageInsights)
 		.where(eq(PageInsights.id, 1));
@@ -18,7 +18,7 @@ const fetchViews = async () => {
 	const views = ++insights[0].views;
 
 	// prettier-ignore
-	await conn
+	await db
 		.update(PageInsights)
 		.set({ views })
 		.where(eq(PageInsights.id, 1))

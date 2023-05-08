@@ -5,7 +5,7 @@ import { pg } from '@lucia-auth/adapter-postgresql';
 
 import { dev } from '$app/environment';
 import { env } from '$env/dynamic/private';
-import { pool } from './db/conn';
+import { pool } from './db';
 
 export const auth = lucia({
 	adapter: pg(pool),
