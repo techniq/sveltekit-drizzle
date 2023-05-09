@@ -18,7 +18,7 @@ export const PageInsights = pgTable('page_insights', {
  * Lucia schema - https://lucia-auth.com/adapters/postgresql#database-schema
  */
 
-export const user = pgTable(
+export const User = pgTable(
 	'auth_user',
 	{
 		id: varchar('id', {
@@ -31,15 +31,15 @@ export const user = pgTable(
 		}).notNull(),
 
 		firstName: varchar('first_name', {
-			length: 15
+			length: 100
 		}),
 
 		lastName: varchar('last_name', {
-			length: 15
+			length: 100
 		}),
 
 		email: varchar('email', {
-			length: 15
+			length: 255
 		}),
 
 		createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow()
@@ -51,7 +51,7 @@ export const user = pgTable(
 	}
 );
 
-export const session = pgTable('auth_session', {
+export const Session = pgTable('auth_session', {
 	id: varchar('id', {
 		length: 128
 	}).primaryKey(),
@@ -59,7 +59,7 @@ export const session = pgTable('auth_session', {
 		length: 15
 	})
 		.notNull()
-		.references(() => user.id),
+		.references(() => User.id),
 	activeExpires: bigint('active_expires', {
 		mode: 'number'
 	}).notNull(),
@@ -68,7 +68,7 @@ export const session = pgTable('auth_session', {
 	}).notNull()
 });
 
-export const key = pgTable('auth_key', {
+export const Key = pgTable('auth_key', {
 	id: varchar('id', {
 		length: 255
 	}).primaryKey(),
@@ -76,7 +76,7 @@ export const key = pgTable('auth_key', {
 		length: 15
 	})
 		.notNull()
-		.references(() => user.id),
+		.references(() => User.id),
 	primaryKey: boolean('primary_key').notNull(),
 	hashedPassword: varchar('hashed_password', {
 		length: 255
