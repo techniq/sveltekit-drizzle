@@ -17,8 +17,12 @@ declare global {
 	namespace Lucia {
 		type Auth = import('$lib/server/auth').Auth;
 		type UserAttributes = {
-			// see: `schema.ts` and lucia's `transformDatabaseUser()`
+			// see: User in `schema.ts` and lucia's `transformDatabaseUser()`
+			// Uses table names and not drizzle ORM
 			username: string;
+			first_name: string;
+			last_name: string;
+			email: string;
 		};
 	}
 }

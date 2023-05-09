@@ -20,9 +20,13 @@ export async function GET({ cookies, url, locals }) {
 				return existingUser;
 			}
 			// create a new user if the user does not exist
+			const [first_name, last_name] = providerUser.name.split(' ');
 			return await createUser({
 				// attributes
-				username: providerUser.login
+				username: providerUser.login,
+				first_name,
+				last_name,
+				email: providerUser.email
 			});
 		};
 		const user = await getUser();

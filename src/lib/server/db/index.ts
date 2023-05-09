@@ -7,4 +7,4 @@ import { env } from '$env/dynamic/private';
 const connectionString = env.DATABASE_URL + '?sslmode=require'; // Neon
 
 export const pool = new pg.Pool({ connectionString });
-export const db = drizzle(pool);
+export const db = drizzle(pool, { logger: true });
