@@ -36,7 +36,7 @@
 
 - Update `schema.ts`
 - `npm run migrate`
-- Run generated SQL scripts (lists in console, or view `drizzle` directory)
+- `npm run migrate:apply` or run generated SQL scripts (lists in console, or view `drizzle` directory)
 
 ## [Lucia](https://lucia-auth.com/)
 
