@@ -15,14 +15,13 @@ const fetchViews = async () => {
 		.from(PageInsights)
 		.where(eq(PageInsights.id, 1));
 
-	const views = ++insights[0].views;
+	const views = (insights?.[0]?.views ?? 0) + 1;
 
 	// prettier-ignore
 	await db
-		.update(PageInsights)
-		.set({ views })
-		.where(eq(PageInsights.id, 1))
-		.returning();
+		.insert(PageInsights)
+		.values({ id: 1, views })
+		.onConflictDoUpdate({ target: PageInsights.id, set: { views } });
 
 	return views;
 };
