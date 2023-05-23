@@ -8,11 +8,11 @@ import { User } from '$lib/server/db/schema';
 // const userSchema = createInsertSchema(User);
 
 const userSchema = z.object({
-	firstName: z.string().nonempty(),
-	lastName: z.string().nonempty(),
-	email: z.string().email(),
-	username: z.string().min(4),
-	password: z.string().min(6)
+	firstName: z.string().nonempty().max(100),
+	lastName: z.string().nonempty().max(100),
+	email: z.string().email().max(255),
+	username: z.string().min(4).max(15),
+	password: z.string().min(6).max(255)
 });
 
 export async function load({ locals }) {
