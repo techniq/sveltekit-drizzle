@@ -10,7 +10,7 @@ import {
 } from 'drizzle-orm/pg-core';
 
 export const PageInsights = pgTable('page_insights', {
-	id: serial('id').notNull(),
+	id: serial('id').primaryKey(),
 	views: integer('views').notNull()
 });
 

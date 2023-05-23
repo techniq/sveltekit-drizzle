@@ -1,0 +1,1 @@
+ALTER TABLE "page_insights" ADD PRIMARY KEY ("id");

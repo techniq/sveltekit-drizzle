@@ -57,6 +57,13 @@
       "when": 1683601704846,
       "tag": "0007_unknown_unus",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "5",
+      "when": 1684810250003,
+      "tag": "0008_warm_scarlet_spider",
+      "breakpoints": true
     }
   ]
 }
