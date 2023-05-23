@@ -1,11 +1,15 @@
 #!/usr/bin/env node --loader ts-node/esm
 import * as path from 'path';
 import { config } from 'dotenv';
+import { expand } from 'dotenv-expand';
 import { drizzle } from 'drizzle-orm/node-postgres';
 import { migrate } from 'drizzle-orm/node-postgres/migrator';
 import pg from 'pg';
 
-config({ path: path.resolve(process.cwd(), '.env.development.local'), debug: true });
+const configFile = '.env.development.local';
+const myEnv = config({ path: path.resolve(process.cwd(), configFile), debug: true });
+// Expand variables
+expand(myEnv);
 
 // const connectionString = process.env.POSTGRES_URL + '?sslmode=require'; // Vercel Postgres
 const connectionString = process.env.DATABASE_URL + '?sslmode=require'; // Neon
