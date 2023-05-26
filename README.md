@@ -23,8 +23,8 @@
 
 - `vercel env pull .env.development.local`
   - Pull any changes added to vercel [environment variables](https://vercel.com/techniq/sveltekit-drizzle/settings/environment-variables)
-- `npm run dev:vercel`
-  - Use instead of `npm run dev` so environment variables are available
+  - Setup `DATABASE_URL` if needed
+- `npm run dev`
 
 ## [Drizzle](https://github.com/drizzle-team/drizzle-orm)
 
