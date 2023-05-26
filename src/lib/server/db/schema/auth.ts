@@ -28,7 +28,11 @@ export const User = pgTable(
 			length: 255
 		}),
 
-		createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow()
+		createdAt: timestamp('created_at', {
+			withTimezone: true
+		})
+			.notNull()
+			.defaultNow()
 	},
 	(user) => {
 		return {
@@ -37,37 +41,44 @@ export const User = pgTable(
 	}
 );
 
-export const Session = pgTable('auth_session', {
-	id: varchar('id', {
-		length: 128
-	}).primaryKey(),
-	userId: varchar('user_id', {
-		length: 15
-	})
-		.notNull()
-		.references(() => User.id),
-	activeExpires: bigint('active_expires', {
-		mode: 'number'
-	}).notNull(),
-	idleExpires: bigint('idle_expires', {
-		mode: 'number'
-	}).notNull()
-});
-
 export const Key = pgTable('auth_key', {
 	id: varchar('id', {
 		length: 255
 	}).primaryKey(),
+
 	userId: varchar('user_id', {
 		length: 15
 	})
 		.notNull()
 		.references(() => User.id),
+
 	primaryKey: boolean('primary_key').notNull(),
+
 	hashedPassword: varchar('hashed_password', {
 		length: 255
 	}),
+
 	expires: bigint('expires', {
 		mode: 'number'
 	})
+});
+
+export const Session = pgTable('auth_session', {
+	id: varchar('id', {
+		length: 128
+	}).primaryKey(),
+
+	userId: varchar('user_id', {
+		length: 15
+	})
+		.notNull()
+		.references(() => User.id),
+
+	activeExpires: bigint('active_expires', {
+		mode: 'number'
+	}).notNull(),
+
+	idleExpires: bigint('idle_expires', {
+		mode: 'number'
+	}).notNull()
 });
