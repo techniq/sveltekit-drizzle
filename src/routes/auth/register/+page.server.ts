@@ -57,7 +57,7 @@ export const actions = {
 			// username already in use
 			console.log('User already exists!');
 			message(form, 'User already exists!');
-			return fail(400);
+			return fail(400, { form });
 		}
 	}
 };

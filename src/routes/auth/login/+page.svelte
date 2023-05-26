@@ -1,6 +1,9 @@
 <script lang="ts">
-	import { enhance } from '$app/forms';
-	// TODO: Show error when failed (export let data / form, use superforms)
+	import { superForm } from 'sveltekit-superforms/client';
+
+	export let data;
+
+	const { form, errors, message, enhance, delayed, submitting } = superForm(data.form, {});
 </script>
 
 <div>
@@ -13,3 +16,7 @@
 		<input type="submit" value="Continue" />
 	</form>
 </div>
+
+{#if $message}
+	<div style:color="red">{$message}</div>
+{/if}
