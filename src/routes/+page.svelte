@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { invalidateAll } from '$app/navigation';
+	import { Button } from 'svelte-ux';
 
 	export let data;
 
@@ -7,22 +8,23 @@
 	// $: console.log('session', data.session);
 </script>
 
-<p>
+<p class="mb-2">
 	{#await data.streamed.views}
 		Loading...
 	{:then views}
 		This page has been viewed {views} times.
-		<button on:click={() => invalidateAll()}>Refresh</button>
+		<Button on:click={() => invalidateAll()} variant="fill">Refresh</Button>
 	{:catch error}
 		{error.message}
 	{/await}
 </p>
 
 {#if data.user}
-	Signed in as: {data.user?.username}
-	<a href="/auth/logout">Sign out</a>
+	Signed in as: {data.user?.firstName}
+	{data.user?.lastName} ({data.user?.username})
+	<Button href="/auth/logout" variant="fill">Sign out</Button>
 {:else}
-	<a href="/auth/register">Register</a>
-	<a href="/auth/login">Login</a>
-	<a href="/auth/github/login">Login to Github</a>
+	<Button href="/auth/register" variant="fill">Register</Button>
+	<Button href="/auth/login" variant="fill">Login</Button>
+	<Button href="/auth/github/login" variant="fill">Login to Github</Button>
 {/if}

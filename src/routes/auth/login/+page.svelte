@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Button, TextField } from 'svelte-ux';
 	import { superForm } from 'sveltekit-superforms/client';
 
 	export let data;
@@ -7,16 +8,29 @@
 </script>
 
 <div>
-	<h1>Sign in</h1>
-	<form method="POST" use:enhance>
-		<label for="username">Username</label><br />
-		<input id="username" name="username" /><br />
-		<label for="password">Password</label><br />
-		<input type="password" id="password" name="password" /><br />
-		<input type="submit" value="Continue" />
+	<h1 class="text-xl mb-3">Log in</h1>
+	<form method="POST" use:enhance class="grid gap-2">
+		{#if $message}
+			<div class="bg-red-50 border-l-2 border-red-500 py-2 px-2 text-red-800 rounded">
+				{$message}
+			</div>
+		{/if}
+
+		<TextField
+			label="Username"
+			name="username"
+			bind:value={$form.username}
+			error={$errors.username}
+		/>
+
+		<TextField
+			label="Password"
+			name="password"
+			type="password"
+			bind:value={$form.password}
+			error={$errors.password}
+		/>
+
+		<Button type="submit" variant="fill" color="accent">Log in</Button>
 	</form>
 </div>
-
-{#if $message}
-	<div style:color="red">{$message}</div>
-{/if}
