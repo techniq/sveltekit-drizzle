@@ -1,18 +1,4 @@
-import {
-	pgTable,
-	integer,
-	serial,
-	varchar,
-	bigint,
-	boolean,
-	uniqueIndex,
-	timestamp
-} from 'drizzle-orm/pg-core';
-
-export const PageInsights = pgTable('page_insights', {
-	id: serial('id').primaryKey(),
-	views: integer('views').notNull()
-});
+import { pgTable, varchar, bigint, boolean, uniqueIndex, timestamp } from 'drizzle-orm/pg-core';
 
 /*
  * Lucia schema - https://lucia-auth.com/adapters/postgresql#database-schema
