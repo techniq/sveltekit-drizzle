@@ -17,9 +17,9 @@
 		"migrate:apply": "./scripts/apply-migrations.ts"
 	},
 	"devDependencies": {
-		"@playwright/test": "^1.34.0",
+		"@playwright/test": "^1.34.3",
 		"@sveltejs/adapter-auto": "^2.1.0",
-		"@sveltejs/kit": "^1.18.0",
+		"@sveltejs/kit": "^1.19.0",
 		"@types/ws": "^8.5.4",
 		"dotenv": "^16.0.3",
 		"dotenv-expand": "^10.0.0",
@@ -42,8 +42,8 @@
 		"@neondatabase/serverless": "^0.4.5",
 		"@upstash/redis": "^1.20.6",
 		"@vercel/postgres": "^0.3.0",
-		"drizzle-kit": "^0.18.0",
-		"drizzle-orm": "^0.26.0",
+		"drizzle-kit": "^0.18.1",
+		"drizzle-orm": "^0.26.1",
 		"drizzle-zod": "^0.4.1",
 		"lucia-auth": "^1.7.0",
 		"pg": "^8.11.0",
