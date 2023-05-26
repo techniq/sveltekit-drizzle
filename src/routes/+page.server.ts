@@ -10,7 +10,7 @@ export async function load({ locals, route }) {
 }
 
 async function fetchViews(routeId: string) {
-	return await cache.incr(routeId);
+	return await cache.incr(`pageview:${routeId}`);
 }
 
 // async function fetchViews() {
