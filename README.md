@@ -68,3 +68,9 @@ console.log({
 	PGDATABASE: env.PGDATABASE
 });
 ```
+
+## Hosting
+
+- {Vercel (web)](https://vercel.com)
+- [Neon (Postgres)](https://console.neon.tech)
+- [Upstash (Redis)](https://console.upstash.com/)
