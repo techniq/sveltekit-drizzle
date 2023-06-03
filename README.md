@@ -71,6 +71,7 @@ console.log({
 
 ## Hosting
 
-- {Vercel (web)](https://vercel.com)
+- [Vercel (web)](https://vercel.com)
 - [Neon (Postgres)](https://console.neon.tech)
 - [Upstash (Redis)](https://console.upstash.com/)
+- [Cloudflare (R2)](https://dash.cloudflare.com/)

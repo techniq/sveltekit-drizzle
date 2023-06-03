@@ -9,8 +9,9 @@
 </script>
 
 <AppLayout>
-	<nav slot="nav" class="h-full">
-		<NavItem text="Home" path="/" currentUrl={$page.url} class="pl-6 py-2 mt-4" />
+	<nav slot="nav" class="h-full pt-4">
+		<NavItem text="Home" path="/" currentUrl={$page.url} class="pl-6 py-2" />
+		<NavItem text="Upload" path="/upload" currentUrl={$page.url} class="pl-6 py-2" />
 	</nav>
 
 	<AppBar title="sveltekit-drizzle">
