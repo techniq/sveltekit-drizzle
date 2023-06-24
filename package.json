@@ -3,8 +3,9 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "vite dev --port 3003",
-		"dev:vercel": "vercel dev --listen 3003",
+		"dev": "vite dev --port 3005",
+		"dev:vercel": "vercel dev --listen 3005",
+		"dev:debug": "NODE_OPTIONS=--inspect vite dev --port 3005",
 		"build": "vite build",
 		"preview": "vite preview",
 		"test": "playwright test",
