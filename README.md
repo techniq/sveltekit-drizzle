@@ -10,7 +10,9 @@
   - SvelteKit actions, works without javascript
   - Zod integration
 - Zod
-- Vercel Postgres (Neon)
+- Postgres (Neon)
+- Redis (Upstash)
+- Storage (Cloudflare R2)
 
 ## Setup SvelteKit / Vercel
 
